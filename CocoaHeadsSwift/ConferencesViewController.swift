@@ -16,16 +16,18 @@ class ConferencesViewController : UIViewController {
     
     // MARK : Variables
     
+    // Tuple example
     var lectures : [(title : String, name : String)]!
     
     // MARK : Life Cycle
     
     override func viewDidLoad() {
+        // Array of Tuple
         self.lectures = [("Meu primeiro projeto em Swift 2.0", "Guilherme e Vilson"),
                          ("Design Patterns iOS", "Caio e Carlos"),
                          ("Carregamento otimizado com GDC", "Tarek Abdala"),
                          ("Coffe Break", "Arc Touch")]
-        self.conferencesTableView.reloadData()
+//        self.conferencesTableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
