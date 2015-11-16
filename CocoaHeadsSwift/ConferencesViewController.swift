@@ -27,7 +27,6 @@ class ConferencesViewController : UIViewController {
                          ("Design Patterns iOS", "Caio e Carlos"),
                          ("Carregamento otimizado com GDC", "Tarek Abdala"),
                          ("Coffe Break", "Arc Touch")]
-//        self.conferencesTableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -36,11 +35,17 @@ class ConferencesViewController : UIViewController {
     
 }
 
+// You can implement delegates using extension
 extension ConferencesViewController : UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        // Get cell with identifier.
+        // This identifieer has been set on storyboard.
         let cell : ConferenceCell = tableView.dequeueReusableCellWithIdentifier("conferenceIdentifier", forIndexPath: indexPath) as! ConferenceCell
+        
+        // Set the title and name using the row
+        // self.lectures[0].title is equal to "Meu primeiro projeto em Swift 2.0"
         cell.titleLabel.text = self.lectures[indexPath.row].title
         cell.nameLabel.text = self.lectures[indexPath.row].name
         return cell
